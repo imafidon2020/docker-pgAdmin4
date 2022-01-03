@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: imafidondockerpgadmin 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: imafidondockerpgadmin
+  template:
+    metadata:
+      labels:
+        app: imafidondockerpgadmin 
+    spec:
+      containers:
+        - name: imafidondockerpgadmin 
+          image: dadregistry.azurecr.io/imafidondockerpgadmin
+          ports:
+          - containerPort: 80
